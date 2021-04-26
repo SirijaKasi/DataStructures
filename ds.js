@@ -62,6 +62,20 @@ class LinkedList {
     this.size++;
   }
 
+  //getAt() to know the particular value by it's index
+  getAt(index) {
+    let current = this.head;
+    let count = 0;
+    while (current) {
+      if (count == index) {
+        console.log(current.data);
+      }
+      count++;
+      current = current.next;
+    }
+    return null;
+  }
+
   //print the List
   printList() {
     let current = this.head;
@@ -78,5 +92,8 @@ list.insertFirst(20);
 list.insertFirst(50);
 list.insertLast(90);
 list.insertAt(80, 2);
+list.insertAt(100, 1);
+list.insertAt(990, 3);
 
-list.printList();
+// list.printList();
+list.getAt(4);
