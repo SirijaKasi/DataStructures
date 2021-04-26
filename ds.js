@@ -14,6 +14,10 @@ class LinkedList {
   insertFirst(data) {
     this.head = new Node(data, this.head);
   }
+  //inserting last node
+  insertLast() {
+      
+  }
 }
 let list = new LinkedList();
 list.insertFirst(10);
