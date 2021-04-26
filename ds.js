@@ -76,6 +76,27 @@ class LinkedList {
     return null;
   }
 
+  //removeAt
+  removeAt(index) {
+    if (index > 0 && index > this.size) {
+      return;
+    }
+    let current = this.head;
+    let previous;
+    let count = 0;
+    //Remove at First
+    if (index === 0) {
+      this.head = current.next;
+    } else {
+      while (count < index) {
+        count++;
+        previous = current;
+        current = current.next;
+      }
+      previous.next = current.next;
+    }
+    this.size--;
+  }
   //print the List
   printList() {
     let current = this.head;
@@ -95,5 +116,7 @@ list.insertAt(80, 2);
 list.insertAt(100, 1);
 list.insertAt(990, 3);
 
+// list.getAt(4);
+
 // list.printList();
-list.getAt(4);
+list.removeAt(0);
